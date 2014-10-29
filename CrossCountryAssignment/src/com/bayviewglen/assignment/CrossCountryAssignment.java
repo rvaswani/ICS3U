@@ -11,7 +11,7 @@ package com.bayviewglen.assignment;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
-// comment
+
 public class CrossCountryAssignment {
 
 	public static void main(String[] args) {
