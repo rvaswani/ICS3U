@@ -16,386 +16,371 @@ public class CrossCountryAssignment {
 
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
-
+		
 		final int SECONDS_PER_MINUTE = 60;
-
+		
 		DecimalFormat formatter = new DecimalFormat("00.000");
-
-		// Runner One ... this is represented by the "R1" at the beginning of
+		
+		// Runner One is represented by the "r1" at the beginning of
 		// each variable
-		System.out.print("Please enter first and last name here: ");
-		String R1name = keyboard.nextLine();
-		String R1firstname = R1name.split(" ")[0];
-		String R1lastname = R1name.split(" ")[1];
+		System.out.print("Please enter the runner's first and last name here: ");
+		String r1Name = keyboard.nextLine();
+		String r1FirstName = r1Name.split(" ")[0];
+		String r1LastName = r1Name.split(" ")[1];
 
-		// Split One ... this is represented by the "One" at the end of each
+		// Split One is represented by the "One" at the end of each
 		// variable
-		System.out.print("Please input " + R1firstname + "'s time to the end of the first mile: ");
-		String R1timeOne = keyboard.nextLine();
+		System.out.print("Please input " + r1FirstName + "'s time to the end of the first mile <mm:ss.sss>: ");
+		String r1TimeOne = keyboard.nextLine();
 
-		String R1minutesOne = R1timeOne.split(":")[0];
-		double R1minuteNumberOne = Double.parseDouble(R1minutesOne);
-		double R1minuteSecondsOne = R1minuteNumberOne * SECONDS_PER_MINUTE;
+		String r1MinutesOne = r1TimeOne.split(":")[0];
+		double r1MinuteNumberOne = Double.parseDouble(r1MinutesOne);
+		double r1MinuteSecondsOne = r1MinuteNumberOne * SECONDS_PER_MINUTE;
 
-		String R1secondsOne = R1timeOne.split(":")[1];
-		double R1secondsNumberOne = Double.parseDouble(R1secondsOne);
-		double R1totalOne = R1secondsNumberOne + R1minuteSecondsOne;
+		String r1SecondsOne = r1TimeOne.split(":")[1];
+		double r1SecondsNumberOne = Double.parseDouble(r1SecondsOne);
+		double r1TotalOne = r1SecondsNumberOne + r1MinuteSecondsOne;
 
-		// Split Two ... this is represented by the "Two" at the end of each
+		// Split Two is represented by the "Two" at the end of each
 		// variable
-		System.out.print("Please input " + R1firstname + "'s time to the end of the second mile: ");
-		String R1timeTwo = keyboard.nextLine();
+		System.out.print("Please input " + r1FirstName + "'s time to the end of the second mile <mm:ss.sss>: ");
+		String r1TimeTwo = keyboard.nextLine();
 
-		String R1minutesTwo = R1timeTwo.split(":")[0];
-		double R1minuteNumberTwo = Double.parseDouble(R1minutesTwo);
-		double R1minuteSecondsTwo = R1minuteNumberTwo * SECONDS_PER_MINUTE;
+		String r1MinutesTwo = r1TimeTwo.split(":")[0];
+		double r1minuteNumberTwo = Double.parseDouble(r1MinutesTwo);
+		double r1MinuteSecondsTwo = r1minuteNumberTwo * SECONDS_PER_MINUTE;
 
-		String R1secondsTwo = R1timeTwo.split(":")[1];
-		double R1secondsNumberTwo = Double.parseDouble(R1secondsTwo);
-		double R1totalTwo = R1secondsNumberTwo + R1minuteSecondsTwo;
-		double R1finaltotalTwo = R1totalTwo - R1totalOne;
-		int R1finalminutesTwo = (int) R1finaltotalTwo / SECONDS_PER_MINUTE;
-		double R1finalsecondsTwo = R1finaltotalTwo % SECONDS_PER_MINUTE;
+		String r1SecondsTwo = r1TimeTwo.split(":")[1];
+		double r1SecondsNumberTwo = Double.parseDouble(r1SecondsTwo);
+		double r1TotalTwo = r1SecondsNumberTwo + r1MinuteSecondsTwo;
+		double r1FinalFotalTwo = r1TotalTwo - r1TotalOne;
+		int r1FinalMinutesTwo = (int) r1FinalFotalTwo / SECONDS_PER_MINUTE;
+		double r1FinalSecondsTwo = r1FinalFotalTwo % SECONDS_PER_MINUTE;
 
-		// Split Three ... this is represented by the "Three" at the end of each
+		// Split Three is represented by the "Three" at the end of each
 		// variable
-		System.out.print("Please input " + R1firstname + " time to complete the 5km: ");
-		String R1fivekmtotal = keyboard.nextLine();
+		System.out.print("Please input " + r1FirstName + "'s time to complete the 5km <mm:ss.sss>: ");
+		String r1FivekKmTotal = keyboard.nextLine();
 
-		String R1minutesThree = R1fivekmtotal.split(":")[0];
-		double R1minuteNumberThree = Double.parseDouble(R1minutesThree);
-		double R1minuteSecondsThree = R1minuteNumberThree * SECONDS_PER_MINUTE;
+		String r1MinutesThree = r1FivekKmTotal.split(":")[0];
+		double r1MinuteNumberThree = Double.parseDouble(r1MinutesThree);
+		double r1MinuteSecondsThree = r1MinuteNumberThree * SECONDS_PER_MINUTE;
 
-		String R1secondsThree = R1fivekmtotal.split(":")[1];
-		double R1secondsNumberThree = Double.parseDouble(R1secondsThree);
-		double R1totalThree = R1secondsNumberThree + R1minuteSecondsThree;
-		double R1finaltotalThree = R1totalThree - R1totalTwo;
-		int R1finalminutesThree = (int) R1finaltotalThree / SECONDS_PER_MINUTE;
-		double R1finalsecondsThree = R1finaltotalThree % SECONDS_PER_MINUTE;
+		String r1SecondsThree = r1FivekKmTotal.split(":")[1];
+		double r1SecondsNumberThree = Double.parseDouble(r1SecondsThree);
+		double r1TotalThree = r1SecondsNumberThree + r1MinuteSecondsThree;
+		double r1FinalTotalThree = r1TotalThree - r1TotalTwo;
+		int r1FinalMinutesThree = (int) r1FinalTotalThree / SECONDS_PER_MINUTE;
+		double r1FinalSecondsThree = r1FinalTotalThree % SECONDS_PER_MINUTE;
 
 		System.out.println();
 		System.out.println("Summary:");
-		System.out.println("Name: " + R1lastname + ", " + R1firstname);
-		System.out.println("Time for split One: " + R1timeOne);
-		System.out.println("Time for split Two: " + R1finalminutesTwo + ":" + formatter.format(R1finalsecondsTwo) + ".");
-		System.out.println("Time for split Three: " + R1finalminutesThree + ":" + formatter.format(R1finalsecondsThree) + ".");
-		System.out.println("The total time is " + R1fivekmtotal);
+		System.out.println("Name: " + r1LastName + ", " + r1FirstName);
+		System.out.println("Time for split One: " + r1TimeOne);
+		System.out.println("Time for split Two: " + r1FinalMinutesTwo + ":" + formatter.format(r1FinalSecondsTwo) + ".");
+		System.out.println("Time for split Three: " + r1FinalMinutesThree + ":" + formatter.format(r1FinalSecondsThree) + ".");
+		System.out.println("The total time is " + r1FivekKmTotal);
 
 		System.out.println("_______________________________________________________________________________________________________");
 		System.out.println();
 
-		// Runner Two = R2 ... this is represented by the "R2" at the beginning
+		// Runner Two = R2 is represented by the "r2" at the beginning
 		// of each variable
-		System.out.print("Please enter first and last name here: ");
-		String R2name = keyboard.nextLine();
-		String R2firstname = R2name.split(" ")[0];
-		String R2lastname = R2name.split(" ")[1];
+		System.out.print("Please enter the runner's first and last name here: ");
+		String r2Name = keyboard.nextLine();
+		String r2FirstName = r2Name.split(" ")[0];
+		String r2LastName = r2Name.split(" ")[1];
 
-		// Split One ... this is represented by the "One" at the end of each
+		// Split One is represented by the "One" at the end of each
 		// variable
-		System.out.print("Please input " + R2firstname + "'s time to the end of the first mile: ");
-		String R2timeOne = keyboard.nextLine();
+		System.out.print("Please input " + r2FirstName + "'s time to the end of the first mile <mm:ss.sss>: ");
+		String r2TimeOne = keyboard.nextLine();
 
-		String R2minutesOne = R2timeOne.split(":")[0];
-		double R2minuteNumberOne = Double.parseDouble(R2minutesOne);
-		double R2minuteSecondsOne = R2minuteNumberOne * SECONDS_PER_MINUTE;
+		String r2MinutesOne = r2TimeOne.split(":")[0];
+		double r2MinuteNumberOne = Double.parseDouble(r2MinutesOne);
+		double r2MinuteSecondsOne = r2MinuteNumberOne * SECONDS_PER_MINUTE;
 
-		String R2secondsOne = R2timeOne.split(":")[1];
-		double R2secondsNumberOne = Double.parseDouble(R2secondsOne);
-		double R2totalOne = R2secondsNumberOne + R2minuteSecondsOne;
+		String r2SecondsOne = r2TimeOne.split(":")[1];
+		double r2SecondsNumberOne = Double.parseDouble(r2SecondsOne);
+		double r2totalOne = r2SecondsNumberOne + r2MinuteSecondsOne;
 
-		// Split Two ... this is represented by the "Two" at the end of each
+		// Split Two is represented by the "Two" at the end of each
 		// variable
-		System.out.print("Please input " + R2firstname + "'s time to the end of the second mile: ");
-		String R2timeTwo = keyboard.nextLine();
+		System.out.print("Please input " + r2FirstName + "'s time to the end of the second mile <mm:ss.sss>: ");
+		String r2TimeTwo = keyboard.nextLine();
 
-		String R2minutesTwo = R2timeTwo.split(":")[0];
-		double R2minuteNumberTwo = Double.parseDouble(R2minutesTwo);
-		double R2minuteSecondsTwo = R2minuteNumberTwo * SECONDS_PER_MINUTE;
+		String r2MinutesTwo = r2TimeTwo.split(":")[0];
+		double r2MinuteNumberTwo = Double.parseDouble(r2MinutesTwo);
+		double r2MinuteSecondsTwo = r2MinuteNumberTwo * SECONDS_PER_MINUTE;
 
-		String R2secondsTwo = R2timeTwo.split(":")[1];
-		double R2secondsNumberTwo = Double.parseDouble(R2secondsTwo);
-		double R2totalTwo = R2secondsNumberTwo + R2minuteSecondsTwo;
-		double R2finaltotalTwo = R2totalTwo - R2totalOne;
-		int R2finalminutesTwo = (int) R2finaltotalTwo / SECONDS_PER_MINUTE;
-		double R2finalsecondsTwo = R2finaltotalTwo % SECONDS_PER_MINUTE;
+		String r2SecondsTwo = r2TimeTwo.split(":")[1];
+		double r2SecondsNumberTwo = Double.parseDouble(r2SecondsTwo);
+		double r2TotalTwo = r2SecondsNumberTwo + r2MinuteSecondsTwo;
+		double r2FinalTotalTwo = r2TotalTwo - r2totalOne;
+		int r2FinalMinutesTwo = (int) r2FinalTotalTwo / SECONDS_PER_MINUTE;
+		double r2FinalSecondsTwo = r2FinalTotalTwo % SECONDS_PER_MINUTE;
 
-		// Split Three ... this is represented by the "Three" at the end of each
+		// Split Three is represented by the "Three" at the end of each
 		// variable
-		System.out.print("Please input " + R2firstname + " time to complete the 5km: ");
-		String R2fivekmtotal = keyboard.nextLine();
+		System.out.print("Please input " + r2FirstName + "'s time to complete the 5km <mm:ss.sss>: ");
+		String r2FiveKmTotal = keyboard.nextLine();
 
-		String R2minutesThree = R2fivekmtotal.split(":")[0];
-		double R2minuteNumberThree = Double.parseDouble(R2minutesThree);
-		double R2minuteSecondsThree = R2minuteNumberThree * SECONDS_PER_MINUTE;
+		String r2MinutesThree = r2FiveKmTotal.split(":")[0];
+		double r2MinuteNumberThree = Double.parseDouble(r2MinutesThree);
+		double r2MinuteSecondsThree = r2MinuteNumberThree * SECONDS_PER_MINUTE;
 
-		String R2secondsThree = R2fivekmtotal.split(":")[1];
-		double R2secondsNumberThree = Double.parseDouble(R2secondsThree);
-		double R2totalThree = R2secondsNumberThree + R2minuteSecondsThree;
-		double R2finaltotalThree = R2totalThree - R2totalTwo;
-		int R2finalminutesThree = (int) R2finaltotalThree / SECONDS_PER_MINUTE;
-		double R2finalsecondsThree = R2finaltotalThree % SECONDS_PER_MINUTE;
+		String r2SecondsThree = r2FiveKmTotal.split(":")[1];
+		double r2SecondsNumberThree = Double.parseDouble(r2SecondsThree);
+		double r2TotalThree = r2SecondsNumberThree + r2MinuteSecondsThree;
+		double r2FinalTotalThree = r2TotalThree - r2TotalTwo;
+		int r2FinalMinutesThree = (int) r2FinalTotalThree / SECONDS_PER_MINUTE;
+		double r2FinalSecondsThree = r2FinalTotalThree % SECONDS_PER_MINUTE;
 
 		System.out.println();
 		System.out.println("Summary:");
-		System.out.println("Name: " + R2lastname + ", " + R2firstname);
-		System.out.println("Time for split One: " + R2timeOne);
-		System.out.println("Time for split Two: " + R2finalminutesTwo + ":" + formatter.format(R2finalsecondsTwo) + ".");
-		System.out.println("Time for split Three: " + R2finalminutesThree + ":" + formatter.format(R2finalsecondsThree) + ".");
-		System.out.println("The total time is " + R2fivekmtotal);
+		System.out.println("Name: " + r2LastName + ", " + r2FirstName);
+		System.out.println("Time for split One: " + r2TimeOne);
+		System.out.println("Time for split Two: " + r2FinalMinutesTwo + ":" + formatter.format(r2FinalSecondsTwo) + ".");
+		System.out.println("Time for split Three: " + r2FinalMinutesThree + ":" + formatter.format(r2FinalSecondsThree) + ".");
+		System.out.println("The total time is " + r2FiveKmTotal);
 
 		System.out.println("___________________________________________________________________________________________________________");
 		System.out.println();
 
-		// Runner Three = R3 ... this is represented by the "R1" at the
+		// Runner Three is represented by the "r3" at the
 		// beginning of each variable
-		System.out.print("Please enter first and last name here: ");
-		String R3name = keyboard.nextLine();
-		String R3firstname = R3name.split(" ")[0];
-		String R3lastname = R3name.split(" ")[1];
+		System.out.print("Please enter the runner's first and last name here: ");
+		String r3Name = keyboard.nextLine();
+		String r3FirstName = r3Name.split(" ")[0];
+		String r3LastName = r3Name.split(" ")[1];
 
-		// Split One ... this is represented by the "One" at the end of each
+		// Split One is represented by the "One" at the end of each
 		// variable
-		System.out.print("Please input " + R3firstname + "'s time to the end of the first mile: ");
-		String R3timeOne = keyboard.nextLine();
+		System.out.print("Please input " + r3FirstName + "'s time to the end of the first mile <mm:ss.sss>: ");
+		String r3TimeOne = keyboard.nextLine();
 
-		String R3minutesOne = R3timeOne.split(":")[0];
-		double R3minuteNumberOne = Double.parseDouble(R3minutesOne);
-		double R3minuteSecondsOne = R3minuteNumberOne * SECONDS_PER_MINUTE;
+		String r3MinutesOne = r3TimeOne.split(":")[0];
+		double r3MinuteNumberOne = Double.parseDouble(r3MinutesOne);
+		double r3MinuteSecondsOne = r3MinuteNumberOne * SECONDS_PER_MINUTE;
 
-		String R3secondsOne = R3timeOne.split(":")[1];
-		double R3secondsNumberOne = Double.parseDouble(R3secondsOne);
-		double R3totalOne = R3secondsNumberOne + R3minuteSecondsOne;
+		String r3SecondsOne = r3TimeOne.split(":")[1];
+		double r3SecondsNumberOne = Double.parseDouble(r3SecondsOne);
+		double r3TotalOne = r3SecondsNumberOne + r3MinuteSecondsOne;
 
-		// Split Two ... this is represented by the "Two" at the end of each
+		// Split Two is represented by the "Two" at the end of each
 		// variable
-		System.out.print("Please input " + R3firstname + "'s time to the end of the second mile: ");
-		String R3timeTwo = keyboard.nextLine();
+		System.out.print("Please input " + r3FirstName + "'s time to the end of the second mile <mm:ss.sss>: ");
+		String r3TimeTwo = keyboard.nextLine();
 
-		String R3minutesTwo = R3timeTwo.split(":")[0];
-		double R3minuteNumberTwo = Double.parseDouble(R3minutesTwo);
-		double R3minuteSecondsTwo = R3minuteNumberTwo * SECONDS_PER_MINUTE;
+		String r3MinutesTwo = r3TimeTwo.split(":")[0];
+		double r3MinuteNumberTwo = Double.parseDouble(r3MinutesTwo);
+		double r3minuteSecondsTwo = r3MinuteNumberTwo * SECONDS_PER_MINUTE;
 
-		String R3secondsTwo = R3timeTwo.split(":")[1];
-		double R3secondsNumberTwo = Double.parseDouble(R3secondsTwo);
-		double R3totalTwo = R3secondsNumberTwo + R3minuteSecondsTwo;
-		double R3finaltotalTwo = R3totalTwo - R3totalOne;
-		int R3finalminutesTwo = (int) R3finaltotalTwo / SECONDS_PER_MINUTE;
-		double R3finalsecondsTwo = R3finaltotalTwo % SECONDS_PER_MINUTE;
+		String r3SecondsTwo = r3TimeTwo.split(":")[1];
+		double r3SecondsNumberTwo = Double.parseDouble(r3SecondsTwo);
+		double r3TotalTwo = r3SecondsNumberTwo + r3minuteSecondsTwo;
+		double r3FinalTotalTwo = r3TotalTwo - r3TotalOne;
+		int r3FinalMinutesTwo = (int) r3FinalTotalTwo / SECONDS_PER_MINUTE;
+		double r3FinalSecondsTwo = r3FinalTotalTwo % SECONDS_PER_MINUTE;
 
-		// Split Three ... this is represented by the "Three" at the end of each
+		// Split Three is represented by the "Three" at the end of each
 		// variable
-		System.out.print("Please input " + R3firstname + " time to complete the 5km: ");
-		String R3fivekmtotal = keyboard.nextLine();
+		System.out.print("Please input " + r3FirstName + "'s time to complete the 5km <mm:ss.sss>: ");
+		String r3FiveKmTotal = keyboard.nextLine();
 
-		String R3minutesThree = R3fivekmtotal.split(":")[0];
-		double R3minuteNumberThree = Double.parseDouble(R3minutesThree);
-		double R3minuteSecondsThree = R3minuteNumberThree * SECONDS_PER_MINUTE;
+		String r3MinutesThree = r3FiveKmTotal.split(":")[0];
+		double r3MinuteNumberThree = Double.parseDouble(r3MinutesThree);
+		double r3MinuteSecondsThree = r3MinuteNumberThree * SECONDS_PER_MINUTE;
 
-		String R3secondsThree = R3fivekmtotal.split(":")[1];
-		double R3secondsNumberThree = Double.parseDouble(R3secondsThree);
-		double R3totalThree = R3secondsNumberThree + R3minuteSecondsThree;
-		double R3finaltotalThree = R3totalThree - R3totalTwo;
-		int R3finalminutesThree = (int) R3finaltotalThree / SECONDS_PER_MINUTE;
-		double R3finalsecondsThree = R3finaltotalThree % SECONDS_PER_MINUTE;
+		String r3SecondsThree = r3FiveKmTotal.split(":")[1];
+		double r3SecondsNumberThree = Double.parseDouble(r3SecondsThree);
+		double r3TotalThree = r3SecondsNumberThree + r3MinuteSecondsThree;
+		double r3FinalTotalThree = r3TotalThree - r3TotalTwo;
+		int r3FinalMinutesThree = (int) r3FinalTotalThree / SECONDS_PER_MINUTE;
+		double r3FinalSecondsThree = r3FinalTotalThree % SECONDS_PER_MINUTE;
 
 		System.out.println();
 		System.out.println("Summary:");
-		System.out.println("Name: " + R3lastname + ", " + R3firstname);
-		System.out.println("Time for split One: " + R3timeOne);
-		System.out.println("Time for split Two: " + R3finalminutesTwo + ":" + formatter.format(R3finalsecondsTwo) + ".");
-		System.out.println("Time for split Three: " + R3finalminutesThree + ":" + formatter.format(R3finalsecondsThree) + ".");
-		System.out.println("The total time is " + R3fivekmtotal);
+		System.out.println("Name: " + r3LastName + ", " + r3FirstName);
+		System.out.println("Time for split One: " + r3TimeOne);
+		System.out.println("Time for split Two: " + r3FinalMinutesTwo + ":" + formatter.format(r3FinalSecondsTwo) + ".");
+		System.out.println("Time for split Three: " + r3FinalMinutesThree + ":" + formatter.format(r3FinalSecondsThree) + ".");
+		System.out.println("The total time is " + r3FiveKmTotal);
 
 		System.out.println("___________________________________________________________________________________________________________");
 		System.out.println();
 
-		// Runner Four = R4 ... this is represented by the "R1" at the beginning
+		// Runner Four is represented by the "r4" at the beginning
 		// of each variable
-		System.out.print("Please enter first and last name here: ");
-		String R4name = keyboard.nextLine();
-		String R4firstname = R4name.split(" ")[0];
-		String R4lastname = R4name.split(" ")[1];
+		System.out.print("Please enter the runner's first and last name here: ");
+		String r4Name = keyboard.nextLine();
+		String r4FirstName = r4Name.split(" ")[0];
+		String r4LastName = r4Name.split(" ")[1];
 
-		// Split One ... this is represented by the "One" at the end of each
+		// Split One is represented by the "One" at the end of each
 		// variable
-		System.out.print("Please input " + R4firstname + "'s time to the end of the first mile: ");
-		String R4timeOne = keyboard.nextLine();
+		System.out.print("Please input " + r4FirstName + "'s time to the end of the first mile <mm:ss.sss>: ");
+		String r4TimeOne = keyboard.nextLine();
 
-		String R4minutesOne = R4timeOne.split(":")[0];
-		double R4minuteNumberOne = Double.parseDouble(R4minutesOne);
-		double R4minuteSecondsOne = R4minuteNumberOne * SECONDS_PER_MINUTE;
+		String r4MinutesOne = r4TimeOne.split(":")[0];
+		double r4MinuteNumberOne = Double.parseDouble(r4MinutesOne);
+		double r4MinuteSecondsOne = r4MinuteNumberOne * SECONDS_PER_MINUTE;
 
-		String R4secondsOne = R4timeOne.split(":")[1];
-		double R4secondsNumberOne = Double.parseDouble(R4secondsOne);
-		double R4totalOne = R4secondsNumberOne + R4minuteSecondsOne;
+		String r4SecondsOne = r4TimeOne.split(":")[1];
+		double r4SecondsNumberOne = Double.parseDouble(r4SecondsOne);
+		double r4TotalOne = r4SecondsNumberOne + r4MinuteSecondsOne;
 
-		// Split Two ... this is represented by the "Two" at the end of each
+		// Split Two is represented by the "Two" at the end of each
 		// variable
-		System.out.print("Please input " + R4firstname + "'s time to the end of the second mile: ");
-		String R4timeTwo = keyboard.nextLine();
+		System.out.print("Please input " + r4FirstName + "'s time to the end of the second mile <mm:ss.sss>: ");
+		String r4TimeTwo = keyboard.nextLine();
 
-		String R4minutesTwo = R4timeTwo.split(":")[0];
-		double R4minuteNumberTwo = Double.parseDouble(R4minutesTwo);
-		double R4minuteSecondsTwo = R4minuteNumberTwo * SECONDS_PER_MINUTE;
+		String r4MinutesTwo = r4TimeTwo.split(":")[0];
+		double r4MinuteNumberTwo = Double.parseDouble(r4MinutesTwo);
+		double r4MinuteSecondsTwo = r4MinuteNumberTwo * SECONDS_PER_MINUTE;
 
-		String R4secondsTwo = R4timeTwo.split(":")[1];
-		double R4secondsNumberTwo = Double.parseDouble(R4secondsTwo);
-		double R4totalTwo = R4secondsNumberTwo + R4minuteSecondsTwo;
-		double R4finaltotalTwo = R4totalTwo - R4totalOne;
-		int R4finalminutesTwo = (int) R4finaltotalTwo / SECONDS_PER_MINUTE;
-		double R4finalsecondsTwo = R4finaltotalTwo % SECONDS_PER_MINUTE;
+		String r4SecondsTwo = r4TimeTwo.split(":")[1];
+		double r4SecondsNumberTwo = Double.parseDouble(r4SecondsTwo);
+		double r4TotalTwo = r4SecondsNumberTwo + r4MinuteSecondsTwo;
+		double r4FinalTotalTwo = r4TotalTwo - r4TotalOne;
+		int r4FinalMinutesTwo = (int) r4FinalTotalTwo / SECONDS_PER_MINUTE;
+		double r4FinalSecondsTwo = r4FinalTotalTwo % SECONDS_PER_MINUTE;
 
-		// Split Three ... this is represented by the "Three" at the end of each
+		// Split Three is represented by the "Three" at the end of each
 		// variable
-		System.out.print("Please input " + R4firstname + " time to complete the 5km: ");
-		String R4fivekmtotal = keyboard.nextLine();
+		System.out.print("Please input " + r4FirstName + "'s time to complete the 5km <mm:ss.sss>: ");
+		String r4FiveKmTotal = keyboard.nextLine();
 
-		String R4minutesThree = R4fivekmtotal.split(":")[0];
-		double R4minuteNumberThree = Double.parseDouble(R4minutesThree);
-		double R4minuteSecondsThree = R4minuteNumberThree * SECONDS_PER_MINUTE;
+		String r4MinutesThree = r4FiveKmTotal.split(":")[0];
+		double r4MinuteNumberThree = Double.parseDouble(r4MinutesThree);
+		double r4MinuteSecondsThree = r4MinuteNumberThree * SECONDS_PER_MINUTE;
 
-		String R4secondsThree = R4fivekmtotal.split(":")[1];
-		double R4secondsNumberThree = Double.parseDouble(R4secondsThree);
-		double R4totalThree = R4secondsNumberThree + R4minuteSecondsThree;
-		double R4finaltotalThree = R4totalThree - R4totalTwo;
-		int R4finalminutesThree = (int) R4finaltotalThree / SECONDS_PER_MINUTE;
-		double R4finalsecondsThree = R4finaltotalThree % SECONDS_PER_MINUTE;
+		String r4SecondsThree = r4FiveKmTotal.split(":")[1];
+		double r4SecondsNumberThree = Double.parseDouble(r4SecondsThree);
+		double r4TotalThree = r4SecondsNumberThree + r4MinuteSecondsThree;
+		double r4FinaltotalThree = r4TotalThree - r4TotalTwo;
+		int r4FinalMinutesThree = (int) r4FinaltotalThree / SECONDS_PER_MINUTE;
+		double r4FinalSecondsThree = r4FinaltotalThree % SECONDS_PER_MINUTE;
 
 		System.out.println();
 		System.out.println("Summary:");
-		System.out.println("Name: " + R4lastname + ", " + R4firstname);
-		System.out.println("Time for split One: " + R4timeOne);
-		System.out.println("Time for split Two: " + R4finalminutesTwo + ":" + formatter.format(R4finalsecondsTwo) + ".");
-		System.out.println("Time for split Three: " + R4finalminutesThree + ":" + formatter.format(R4finalsecondsThree) + ".");
-		System.out.println("The total time is " + R4fivekmtotal);
+		System.out.println("Name: " + r4LastName + ", " + r4FirstName);
+		System.out.println("Time for split One: " + r4TimeOne);
+		System.out.println("Time for split Two: " + r4FinalMinutesTwo + ":" + formatter.format(r4FinalSecondsTwo) + ".");
+		System.out.println("Time for split Three: " + r4FinalMinutesThree + ":" + formatter.format(r4FinalSecondsThree) + ".");
+		System.out.println("The total time is " + r4FiveKmTotal);
 
 		System.out.println("___________________________________________________________________________________________________________");
 		System.out.println();
 
-		// Runner Five = 5 ... this is represented by the "R1" at the beginning
+		// Runner Five is represented by the "r5" at the beginning
 		// of each variable
-		System.out.print("Please enter first and last name here: ");
-		String R5name = keyboard.nextLine();
-		String R5firstname = R5name.split(" ")[0];
-		String R5lastname = R5name.split(" ")[1];
+		System.out.print("Please enter the runner's first and last name here: ");
+		String r5Name = keyboard.nextLine();
+		String r5FirstName = r5Name.split(" ")[0];
+		String r5LastName = r5Name.split(" ")[1];
 
 		// Split One ... this is represented by the "One" at the end of each
 		// variable
-		System.out.print("Please input " + R5firstname + "'s time to the end of the first mile: ");
-		String R5timeOne = keyboard.nextLine();
+		System.out.print("Please input " + r5FirstName + "'s time to the end of the first mile <mm:ss.sss>: ");
+		String r5TimeOne = keyboard.nextLine();
 
-		String R5minutesOne = R5timeOne.split(":")[0];
-		double R5minuteNumberOne = Double.parseDouble(R5minutesOne);
-		double R5minuteSecondsOne = R5minuteNumberOne * SECONDS_PER_MINUTE;
+		String r5MinutesOne = r5TimeOne.split(":")[0];
+		double r5MinuteNumberOne = Double.parseDouble(r5MinutesOne);
+		double r5MinuteSecondsOne = r5MinuteNumberOne * SECONDS_PER_MINUTE;
 
-		String R5secondsOne = R5timeOne.split(":")[1];
-		double R5secondsNumberOne = Double.parseDouble(R5secondsOne);
-		double R5totalOne = R5secondsNumberOne + R5minuteSecondsOne;
+		String r5SecondsOne = r5TimeOne.split(":")[1];
+		double r5SecondsNumberOne = Double.parseDouble(r5SecondsOne);
+		double r5TotalOne = r5SecondsNumberOne + r5MinuteSecondsOne;
 
 		// Split Two ... this is represented by the "Two" at the end of each
 		// variable
-		System.out.print("Please input " + R5firstname + "'s time to the end of the second mile: ");
-		String R5timeTwo = keyboard.nextLine();
+		System.out.print("Please input " + r5FirstName + "'s time to the end of the second mile <mm:ss.sss>: ");
+		String r5TimeTwo = keyboard.nextLine();
 
-		String R5minutesTwo = R5timeTwo.split(":")[0];
-		double R5minuteNumberTwo = Double.parseDouble(R5minutesTwo);
-		double R5minuteSecondsTwo = R5minuteNumberTwo * SECONDS_PER_MINUTE;
+		String r5MinutesTwo = r5TimeTwo.split(":")[0];
+		double r5MinuteNumberTwo = Double.parseDouble(r5MinutesTwo);
+		double r5MinuteSecondsTwo = r5MinuteNumberTwo * SECONDS_PER_MINUTE;
 
-		String R5secondsTwo = R5timeTwo.split(":")[1];
-		double R5secondsNumberTwo = Double.parseDouble(R5secondsTwo);
-		double R5totalTwo = R5secondsNumberTwo + R5minuteSecondsTwo;
-		double R5finaltotalTwo = R5totalTwo - R5totalOne;
-		int R5finalminutesTwo = (int) R5finaltotalTwo / SECONDS_PER_MINUTE;
-		double R5finalsecondsTwo = R5finaltotalTwo % SECONDS_PER_MINUTE;
+		String r5SecondsTwo = r5TimeTwo.split(":")[1];
+		double r5SecondsNumberTwo = Double.parseDouble(r5SecondsTwo);
+		double r5TotalTwo = r5SecondsNumberTwo + r5MinuteSecondsTwo;
+		double r5FinalTotalTwo = r5TotalTwo - r5TotalOne;
+		int r5FinalMinutesTwo = (int) r5FinalTotalTwo / SECONDS_PER_MINUTE;
+		double r5FinalSecondsTwo = r5FinalTotalTwo % SECONDS_PER_MINUTE;
 
 		// Split Three ... this is represented by the "Three" at the end of each
 		// variable
-		System.out.print("Please input " + R5firstname + " time to complete the 5km: ");
-		String R5fivekmtotal = keyboard.nextLine();
+		System.out.print("Please input " + r5FirstName + "'s time to complete the 5km <mm:ss.sss>: ");
+		String r5FiveKmTotal = keyboard.nextLine();
 
-		String R5minutesThree = R5fivekmtotal.split(":")[0];
-		double R5minuteNumberThree = Double.parseDouble(R5minutesThree);
-		double R5minuteSecondsThree = R5minuteNumberThree * SECONDS_PER_MINUTE;
+		String r5MinutesThree = r5FiveKmTotal.split(":")[0];
+		double r5MinuteNumberThree = Double.parseDouble(r5MinutesThree);
+		double r5MinuteSecondsThree = r5MinuteNumberThree * SECONDS_PER_MINUTE;
 
-		String R5secondsThree = R5fivekmtotal.split(":")[1];
-		double R5secondsNumberThree = Double.parseDouble(R5secondsThree);
-		double R5totalThree = R5secondsNumberThree + R5minuteSecondsThree;
-		double R5finaltotalThree = R5totalThree - R5totalTwo;
-		int R5finalminutesThree = (int) R5finaltotalThree / SECONDS_PER_MINUTE;
-		double R5finalsecondsThree = R5finaltotalThree % SECONDS_PER_MINUTE;
+		String r5SecondsThree = r5FiveKmTotal.split(":")[1];
+		double r5SecondsNumberThree = Double.parseDouble(r5SecondsThree);
+		double r5TotalThree = r5SecondsNumberThree + r5MinuteSecondsThree;
+		double r5FinalTotalThree = r5TotalThree - r5TotalTwo;
+		int r5FinalMinutesThree = (int) r5FinalTotalThree / SECONDS_PER_MINUTE;
+		double r5FinalSecondsThree = r5FinalTotalThree % SECONDS_PER_MINUTE;
 
 		System.out.println();
 		System.out.println("Summary:");
-		System.out.println("Name: " + R5lastname + ", " + R5firstname);
-		System.out.println("Time for split One: " + R5timeOne);
-		System.out.println("Time for split Two: " + R5finalminutesTwo + ":" + formatter.format(R5finalsecondsTwo) + ".");
-		System.out.println("Time for split Three: " + R5finalminutesThree + ":" + formatter.format(R5finalsecondsThree) + ".");
-		System.out.println("The total time is " + R5fivekmtotal);
+		System.out.println("Name: " + r5LastName + ", " + r5FirstName);
+		System.out.println("Time for split One: " + r5TimeOne);
+		System.out.println("Time for split Two: " + r5FinalMinutesTwo + ":" + formatter.format(r5FinalSecondsTwo) + ".");
+		System.out.println("Time for split Three: " + r5FinalMinutesThree + ":" + formatter.format(r5FinalSecondsThree) + ".");
+		System.out.println("The total time is " + r5FiveKmTotal);
 
 		System.out.println("___________________________________________________________________________________________________________");
 		System.out.println();
 
-		// Creating the Summary Table
+		// Creating the Summary Table of all five runners
 		String split1 = "Split One";
 		String split2 = "Split Two";
 		String split3 = "Split Three";
 		String totaltime = "Total Time";
-		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", "", split1, split2, split3, totaltime); // the
-																										// 10
-																										// is
-																										// the
-																										// width,
-																										// the
-																										// .2
-																										// is
-																										// the
-																										// number
-																										// of
-																										// decimal
-																										// places
-																										// the
-																										// f
-																										// is
-																										// float
-																										// (double).
+		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", "", split1, split2, split3, totaltime); 
 		System.out.println("---------------|------------------|----------------|----------------|----------------|");
-		String Runner1 = R1name;
-		String Runner1splitOne = R1timeOne;
-		String Runner1splitTwo = R2finalminutesTwo + ":" + formatter.format(R2finalsecondsTwo);
-		String Runner1splitThree = R2finalminutesThree + ":" + formatter.format(R2finalsecondsThree);
-		String Runner1total = R1fivekmtotal;
-		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", Runner1, Runner1splitOne, Runner1splitTwo, Runner1splitThree, Runner1total);
+		String runner1 = r1Name;
+		String runner1SplitOne = r1TimeOne;
+		String runner1SplitTwo = r1FinalMinutesTwo + ":" + formatter.format(r2FinalSecondsTwo);
+		String runner1SplitThree = r1FinalMinutesThree + ":" + formatter.format(r2FinalSecondsThree);
+		String runner1Total = r1FivekKmTotal;
+		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", runner1, runner1SplitOne, runner1SplitTwo, runner1SplitThree, runner1Total);
 		System.out.println("---------------|------------------|----------------|----------------|----------------|");
-		String Runner2 = R2name;
-		String Runner2splitOne = R2timeOne;
-		String Runner2splitTwo = R2finalminutesTwo + ":" + formatter.format(R2finalsecondsTwo);
-		String Runner2splitThree = R2finalminutesThree + ":" + formatter.format(R2finalsecondsThree);
-		String Runner2total = R2fivekmtotal;
-		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", Runner2, Runner2splitOne, Runner2splitTwo, Runner2splitThree, Runner2total);
+		String runner2 = r2Name;
+		String runner2SplitOne = r2TimeOne;
+		String runner2SplitTwo = r2FinalMinutesTwo + ":" + formatter.format(r2FinalSecondsTwo);
+		String runner2SplitThree = r2FinalMinutesThree + ":" + formatter.format(r2FinalSecondsThree);
+		String runner2Total = r2FiveKmTotal;
+		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", runner2, runner2SplitOne, runner2SplitTwo, runner2SplitThree, runner2Total);
 		System.out.println("---------------|------------------|----------------|----------------|----------------|");
-		String Runner3 = R3name;
-		String Runner3splitOne = R3timeOne;
-		String Runner3splitTwo = R3finalminutesTwo + ":" + formatter.format(R3finalsecondsTwo);
-		String Runner3splitThree = R3finalminutesThree + ":" + formatter.format(R3finalsecondsThree);
-		String Runner3total = R3fivekmtotal;
-		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", Runner3, Runner3splitOne, Runner3splitTwo, Runner3splitThree, Runner3total);
+		String runner3 = r3Name;
+		String runner3SplitOne = r3TimeOne;
+		String runner3SplitTwo = r3FinalMinutesTwo + ":" + formatter.format(r3FinalSecondsTwo);
+		String runner3SplitThree = r3FinalMinutesThree + ":" + formatter.format(r3FinalSecondsThree);
+		String runner3Total = r3FiveKmTotal;
+		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", runner3, runner3SplitOne, runner3SplitTwo, runner3SplitThree, runner3Total);
 		System.out.println("---------------|------------------|----------------|----------------|----------------|");
-		String Runner4 = R4name;
-		String Runner4splitOne = R4timeOne;
-		String Runner4splitTwo = R4finalminutesTwo + ":" + formatter.format(R4finalsecondsTwo);
-		String Runner4splitThree = R4finalminutesThree + ":" + formatter.format(R4finalsecondsThree);
-		String Runner4total = R4fivekmtotal;
-		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", Runner4, Runner4splitOne, Runner4splitTwo, Runner4splitThree, Runner4total);
+		String runner4 = r4Name;
+		String runner4SplitOne = r4TimeOne;
+		String runner4SplitTwo = r4FinalMinutesTwo + ":" + formatter.format(r4FinalSecondsTwo);
+		String runner4SplitThree = r4FinalMinutesThree + ":" + formatter.format(r4FinalSecondsThree);
+		String runner4Total = r4FiveKmTotal;
+		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", runner4, runner4SplitOne, runner4SplitTwo, runner4SplitThree, runner4Total);
 		System.out.println("---------------|------------------|----------------|----------------|----------------|");
-		String Runner5 = R5name;
-		String Runner5splitOne = R5timeOne;
-		String Runner5splitTwo = R5finalminutesTwo + ":" + formatter.format(R5finalsecondsTwo);
-		String Runner5splitThree = R5finalminutesThree + ":" + formatter.format(R5finalsecondsThree);
-		String Runner5total = R5fivekmtotal;
-		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", Runner5, Runner5splitOne, Runner5splitTwo, Runner5splitThree, Runner5total);
+		String runner5 = r5Name;
+		String runner5SplitOne = r5TimeOne;
+		String runner5SplitTwo = r5FinalMinutesTwo + ":" + formatter.format(r5FinalSecondsTwo);
+		String runner5SplitThree = r5FinalMinutesThree + ":" + formatter.format(r5FinalSecondsThree);
+		String runner5Total = r5FiveKmTotal;
+		System.out.printf("%14s |%17s |%15s |%15s |%15s |\n", runner5, runner5SplitOne, runner5SplitTwo, runner5SplitThree, runner5Total);
 		System.out.println("---------------|------------------|----------------|----------------|----------------|");
 
+		keyboard.close();
+		
 	}
 
 }
