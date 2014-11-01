@@ -84,7 +84,7 @@ public class CrossCountryAssignment {
 		System.out.println("_______________________________________________________________________________________________________");
 		System.out.println();
 
-		// Runner Two = R2 is represented by the "r2" at the beginning
+		// Runner Two is represented by the "r2" at the beginning
 		// of each variable
 		System.out.print("Please enter the runner's first and last name here: ");
 		String r2Name = keyboard.nextLine();
